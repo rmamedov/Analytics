@@ -1,0 +1,15 @@
+#Программа получает html с сайта и что-то с ним делает
+
+#Импортируем библиотеку urllib и метод из нее .request
+import urllib.request
+from bs4 import BeautifulSoup
+
+#открываем сайт
+a = urllib.request.urlopen("http://bigl.ua")
+#считываем html который открылся в переменной  'a' и записываем его в переменную html
+html = a.read()
+
+#структурируем текст полученный из переменной html.
+soup = BeautifulSoup(html)
+
+print(soup)

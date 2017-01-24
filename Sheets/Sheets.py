@@ -10,7 +10,7 @@ httpAuth = credentials.authorize(httplib2.Http())
 service = apiclient.discovery.build('sheets', 'v4', http = httpAuth)
 
 spreadsheet = '107nr2V9WYXAQ3Ah3w584ltaxcnrno1Trdk8tB2Ntysg'
-results = service.spreadsheets().batchUpdate(body = {
+results = service.spreadsheets().batchUpdate(spreadsheetId=spreadsheet, body = {
   "requests": [
 
     # Задать ширину столбца A: 317 пикселей
@@ -78,4 +78,6 @@ results = service.spreadsheets().batchUpdate(body = {
       }
     }
   ]
-}, spreadsheet).execute()
+}).execute()
+
+print ('заебись')
